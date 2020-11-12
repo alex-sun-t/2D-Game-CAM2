@@ -1,0 +1,50 @@
+﻿<Page x:Class="Coop_Exam.SelectCharacter"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Coop_Exam"
+      mc:Ignorable="d" 
+      d:DesignHeight="603.825"
+      Title="SelectCharacter" Width="989">
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5*" MinHeight="336"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="329"/>
+                <ColumnDefinition MinWidth="329"/>
+                <ColumnDefinition MinWidth="329"/>
+            </Grid.ColumnDefinitions>
+            <Border Margin="10" Background="Black"/>
+            <Border Margin="10" Background="Black" Grid.Column="1"/>
+            <Border Margin="10" Background="Black" Grid.Column="2"/>
+            <Label Name="lblKnight" Margin="10" Background="#CC000000" Content="Knight" Foreground="White" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Black"/>
+            <Label Name="lblArcher" Margin="10" Background="#CC000000" Content="Archer" Foreground="White" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Black" Grid.Column="1"/>
+            <Label Name="lblMage" Margin="10" Background="#CC000000" Content="Mage" Foreground="White" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Black" Grid.Column="2"/>
+            
+            <Border x:Name="bb1" Tag="1" Background="#CC000000" Grid.Row="1" BorderBrush="Black" BorderThickness="5" Margin ="10"/>
+            <Image x:Name="imgWar" Stretch="Uniform" Width="800" Height="800" Margin="-299,-213,-203,-281" Grid.Row="1"/>
+
+            <Border x:Name="bb2" Tag="2" Background="#CC000000" Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="5" Margin ="10"/>
+            <Image x:Name="imgArch" Stretch="Uniform" Width="500" Height="500" Margin="-101,-97,-101,-97" Grid.Column="1" Grid.Row="1"/>
+
+            <Border x:Name="bb3" Tag="3" Background="#CC000000" Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="5" Margin ="10"/>
+            <Image x:Name="imgMage" Stretch="Uniform" Width="850" Height="850" Margin="-271,-290,-280,-254" Grid.Column="2" Grid.Row="1"/>
+
+            <Border x:Name="b1" Tag="1" Background="#00000000" Grid.Row="1" BorderBrush="Black" BorderThickness="5" Margin ="10" MouseDown="b1_MouseDown"/>
+            <Border x:Name="b2" Tag="2" Background="#00000000" Grid.Column="1" Grid.Row="1" BorderBrush="Black" BorderThickness="5" Margin ="10" MouseDown="b2_MouseDown"/>
+            <Border x:Name="b3" Tag="3" Background="#00000000" Grid.Column="2" Grid.Row="1" BorderBrush="Black" BorderThickness="5" Margin ="10" MouseDown="b3_MouseDown"/>
+
+            <Button x:Name="btnFight" IsEnabled="False" FontSize="20" Content="Fight" Grid.Row="3" Margin="10" Grid.ColumnSpan="2" Width="300" FontFamily="Segoe UI Black" Click="btnFight_Click"/>
+            <Button x:Name="btnCancel" FontSize="20" Content="Back" Grid.Column="1" Grid.Row="3" Margin="10" Grid.ColumnSpan="2" Width="300" FontFamily="Segoe UI Black" Click="btnCancel_Click"/>
+
+        </Grid>
+    </Grid>
+</Page>

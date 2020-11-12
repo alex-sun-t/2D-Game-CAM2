@@ -1,0 +1,15 @@
+﻿<Window x:Class="Coop_Exam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coop_Exam"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="Console And Magic" Height="603.825" Width="1003" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image gif:ImageBehavior.AnimatedSource = "/Textures/bnk.gif" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill" />
+            <Frame NavigationUIVisibility="Hidden" x:Name="frame"/>
+    
+    </Grid>
+</Window>
