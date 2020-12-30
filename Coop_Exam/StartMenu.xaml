@@ -6,10 +6,9 @@
         xmlns:local="clr-namespace:Coop_Exam"
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
-        Title="Console And Magic" Height="603.825" Width="1003" WindowStartupLocation="CenterScreen">
+        Title="Console And Magic 2" Height="603.825" Width="1003" MinHeight="603.825" MinWidth="1003" MaxHeight="603.825" MaxWidth="1003" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Image gif:ImageBehavior.AnimatedSource = "/Textures/bnk.gif" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill" />
-            <Frame NavigationUIVisibility="Hidden" x:Name="frame"/>
-    
+        <Frame NavigationUIVisibility="Hidden" x:Name="frame"/>
     </Grid>
 </Window>

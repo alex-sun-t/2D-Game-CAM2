@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Animation\Animation.cs" />
     <Compile Include="WaitOpponent.xaml.cs">
       <DependentUpon>WaitOpponent.xaml</DependentUpon>
     </Compile>
@@ -165,28 +166,27 @@
     <Resource Include="Textures\westen-fry-forest2x.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\Mage\Hit.png" />
+    <Resource Include="Icons\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Animation\Knight\WALK\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_000.png" />
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_001.png" />
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_002.png" />
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_003.png" />
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_004.png" />
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_005.png" />
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_006.png" />
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_007.png" />
+    <Resource Include="Animation\Knight\ATTACK\ATTACK_008.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Animation\Knight\IDLE\IDLE_000.png" />
     <Resource Include="Animation\Knight\IDLE\IDLE_001.png" />
-    <Resource Include="Animation\Knight\IDLE\IDLE_002.png" />
     <Resource Include="Animation\Knight\IDLE\IDLE_003.png" />
-    <Resource Include="Animation\Knight\IDLE\IDLE_004.png" />
-    <Resource Include="Animation\Knight\IDLE\IDLE_005.png" />
-    <Resource Include="Animation\Knight\IDLE\IDLE_006.png" />
-    <Resource Include="Animation\Knight\IDLE\IDLE_007.png" />
-    <Resource Include="Animation\Knight\IDLE\IDLE_008.png" />
-    <Resource Include="Animation\Knight\IDLE\IDLE_009.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Knight\Hit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Knight\Shield.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Plus.png" />
+    <Resource Include="Animation\Knight\IDLE\IDLE_002.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Animation\Archer\IDLE\IDLE_000.png" />
@@ -195,10 +195,94 @@
     <Resource Include="Animation\Archer\IDLE\IDLE_003.png" />
     <Resource Include="Animation\Archer\IDLE\IDLE_004.png" />
     <Resource Include="Animation\Archer\IDLE\IDLE_005.png" />
-    <Resource Include="Animation\Archer\IDLE\IDLE_006.png" />
-    <Resource Include="Animation\Archer\IDLE\IDLE_007.png" />
-    <Resource Include="Animation\Archer\IDLE\IDLE_008.png" />
-    <Resource Include="Animation\Archer\IDLE\IDLE_009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Animation\Knight\DIE\DIE_000.png" />
+    <Resource Include="Animation\Knight\DIE\DIE_001.png" />
+    <Resource Include="Animation\Knight\DIE\DIE_002.png" />
+    <Resource Include="Animation\Knight\DIE\DIE_003.png" />
+    <Resource Include="Animation\Knight\DIE\DIE_004.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Animation\Knight\RUN\RUN_000.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_001.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_010.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_011.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_012.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_013.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_002.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_003.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_004.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_005.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_006.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_007.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_008.png" />
+    <Resource Include="Animation\Knight\RUN\RUN_009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Animation\Archer\SPELL\SPELL_000.png" />
+    <Resource Include="Animation\Archer\SPELL\SPELL_001.png" />
+    <Resource Include="Animation\Archer\SPELL\SPELL_002.png" />
+    <Resource Include="Animation\Archer\SPELL\SPELL_003.png" />
+    <Resource Include="Animation\Archer\SPELL\SPELL_004.png" />
+    <Resource Include="Animation\Archer\DIE\DIE_000.png" />
+    <Resource Include="Animation\Archer\DIE\DIE_001.png" />
+    <Resource Include="Animation\Archer\DIE\DIE_002.png" />
+    <Resource Include="Animation\Archer\DIE\DIE_003.png" />
+    <Resource Include="Animation\Archer\DIE\DIE_004.png" />
+    <Resource Include="Animation\Archer\DIE\DIE_005.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_000.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_001.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_010.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_011.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_012.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_013.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_002.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_003.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_004.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_005.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_006.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_007.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_008.png" />
+    <Resource Include="Animation\Archer\RUN\RUN_009.png" />
+    <Resource Include="Animation\Archer\ATTACK\ATTACK_000.png" />
+    <Resource Include="Animation\Archer\ATTACK\ATTACK_001.png" />
+    <Resource Include="Animation\Archer\ATTACK\ATTACK_002.png" />
+    <Resource Include="Animation\Archer\ATTACK\ATTACK_003.png" />
+    <Resource Include="Animation\Archer\ATTACK\ATTACK_004.png" />
+    <Resource Include="Animation\Archer\ATTACK\ATTACK_005.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Animation\Mage\ATTACK\ATTACK_000.png" />
+    <Resource Include="Animation\Mage\ATTACK\ATTACK_001.png" />
+    <Resource Include="Animation\Mage\ATTACK\ATTACK_002.png" />
+    <Resource Include="Animation\Mage\ATTACK\ATTACK_003.png" />
+    <Resource Include="Animation\Mage\ATTACK\ATTACK_004.png" />
+    <Resource Include="Animation\Mage\ATTACK\ATTACK_005.png" />
+    <Resource Include="Animation\Mage\ATTACK\ATTACK_006.png" />
+    <Resource Include="Animation\Mage\DIE\DIE_000.png" />
+    <Resource Include="Animation\Mage\DIE\DIE_001.png" />
+    <Resource Include="Animation\Mage\DIE\DIE_002.png" />
+    <Resource Include="Animation\Mage\DIE\DIE_003.png" />
+    <Resource Include="Animation\Mage\DIE\DIE_004.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_000.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_001.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_010.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_002.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_003.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_004.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_005.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_006.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_007.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_008.png" />
+    <Resource Include="Animation\Mage\RUN\RUN_009.png" />
+    <Resource Include="Animation\Mage\SPELL\SPELL_000.png" />
+    <Resource Include="Animation\Mage\SPELL\SPELL_001.png" />
+    <Resource Include="Animation\Mage\SPELL\SPELL_002.png" />
+    <Resource Include="Animation\Mage\SPELL\SPELL_003.png" />
+    <Resource Include="Animation\Mage\SPELL\SPELL_004.png" />
+    <Resource Include="Animation\Mage\SPELL\SPELL_005.png" />
+    <Resource Include="Animation\Mage\SPELL\SPELL_006.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Animation\Mage\IDLE\IDLE_000.png" />
@@ -207,28 +291,23 @@
     <Resource Include="Animation\Mage\IDLE\IDLE_003.png" />
     <Resource Include="Animation\Mage\IDLE\IDLE_004.png" />
     <Resource Include="Animation\Mage\IDLE\IDLE_005.png" />
-    <Resource Include="Animation\Mage\IDLE\IDLE_006.png" />
-    <Resource Include="Animation\Mage\IDLE\IDLE_007.png" />
-    <Resource Include="Animation\Mage\IDLE\IDLE_008.png" />
-    <Resource Include="Animation\Mage\IDLE\IDLE_009.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Archer\Shield.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Mage\Shield.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Archer\Hit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Mage\Spell.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\Knight\Spell.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\Archer\Spell.png" />
+    <Resource Include="Icons\Archer\Hit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Knight\Hit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Mage\Spell.png" />
+    <Resource Include="Icons\Mage\Hit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Knight\Spell.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

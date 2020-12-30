@@ -4,18 +4,21 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Windows.Controls;
 
 namespace Coop_Exam
 {
     public class Knight : ICharacter, INotifyPropertyChanged
     {
+       
+
         static private readonly int maxHP = 100;
         static private readonly int maxMana = 100;
 
         private string name = "Knight";
         private int hp = maxHP;
         private int mana = maxMana;
-        private int power = 4;
+        private int power = 8;
 
         private bool shild = false;
 
@@ -61,7 +64,7 @@ namespace Coop_Exam
 
         public int Hit()
         {
-            ManaRegeneration();
+           // ManaRegeneration();
             return Power;
         }
 
@@ -70,19 +73,16 @@ namespace Coop_Exam
             int manaPrice = 50;
             if (Mana < 50)
                 return 0;
-            Mana -= manaPrice;
-            ManaRegeneration();
+           // Mana -= manaPrice;
+           // ManaRegeneration();
             return Power + 3;
         }
 
         public void Heal()
         {
-            int manaPrice = 20;
-            if (Mana < 20)
-                return;
             Random rnd = new Random();
-            Mana -= manaPrice;
-            ManaRegeneration();
+            //Mana -= manaPrice;
+            //ManaRegeneration();
             HP += rnd.Next(6, 10);
         }
 
@@ -93,7 +93,7 @@ namespace Coop_Exam
         public int GetHP()
         {
             return HP;
-        }     
+        }
 
         public string SetHP(int Damage)
         {
@@ -133,21 +133,106 @@ namespace Coop_Exam
             Mana -= 30;
         }
 
-        public ICollection<string> Animation_IDLE()
+        public List<string> Sprites_IDLE()
         {
             List<string> Sprites_Knight = new List<string>() {
             @"Animation\Knight\IDLE\IDLE_000.png",
             @"Animation\Knight\IDLE\IDLE_001.png",
             @"Animation\Knight\IDLE\IDLE_002.png",
-            @"Animation\Knight\IDLE\IDLE_003.png",
-            @"Animation\Knight\IDLE\IDLE_004.png",
-            @"Animation\Knight\IDLE\IDLE_005.png",
-            @"Animation\Knight\IDLE\IDLE_006.png",
-            @"Animation\Knight\IDLE\IDLE_007.png",
-            @"Animation\Knight\IDLE\IDLE_008.png",
-            @"Animation\Knight\IDLE\IDLE_009.png"};
+            @"Animation\Knight\IDLE\IDLE_003.png"};
 
             return Sprites_Knight;
+        }
+
+        public List<string> Sprites_ATTACK()
+        {
+            List<string> Sprites_ATTACK = new List<string>() {
+            @"Animation\Knight\ATTACK\ATTACK_000.png",
+            @"Animation\Knight\ATTACK\ATTACK_001.png",
+            @"Animation\Knight\ATTACK\ATTACK_002.png",
+            @"Animation\Knight\ATTACK\ATTACK_003.png",
+            @"Animation\Knight\ATTACK\ATTACK_004.png",
+            @"Animation\Knight\ATTACK\ATTACK_005.png",
+            @"Animation\Knight\ATTACK\ATTACK_006.png",
+            @"Animation\Knight\ATTACK\ATTACK_007.png",
+            @"Animation\Knight\ATTACK\ATTACK_008.png"};
+
+            return Sprites_ATTACK;
+        }
+
+        public List<string> Sprites_DIE()
+        {
+            List<string> Sprites_DIE = new List<string>() {
+            @"Animation\Knight\DIE\DIE_000.png",
+            @"Animation\Knight\DIE\DIE_001.png",
+            @"Animation\Knight\DIE\DIE_002.png",
+            @"Animation\Knight\DIE\DIE_003.png",
+            @"Animation\Knight\DIE\DIE_004.png",
+            @"Animation\Knight\DIE\DIE_005.png",
+            @"Animation\Knight\DIE\DIE_006.png",
+            @"Animation\Knight\DIE\DIE_007.png",
+            @"Animation\Knight\DIE\DIE_008.png",
+            @"Animation\Knight\DIE\DIE_009.png"};
+
+            return Sprites_DIE;
+        }
+
+        public List<string> Sprites_RUN()
+        {
+            List<string> Sprites_RUN = new List<string>() {
+            @"Animation\Knight\RUN\RUN_000.png",
+            @"Animation\Knight\RUN\RUN_001.png",
+            @"Animation\Knight\RUN\RUN_002.png",
+            @"Animation\Knight\RUN\RUN_003.png",
+            @"Animation\Knight\RUN\RUN_004.png",
+            @"Animation\Knight\RUN\RUN_005.png",
+            @"Animation\Knight\RUN\RUN_006.png",
+            @"Animation\Knight\RUN\RUN_007.png",
+            @"Animation\Knight\RUN\RUN_008.png",
+            @"Animation\Knight\RUN\RUN_009.png",
+            @"Animation\Knight\RUN\RUN_010.png",
+            @"Animation\Knight\RUN\RUN_011.png",
+            @"Animation\Knight\RUN\RUN_012.png",
+            @"Animation\Knight\RUN\RUN_013.png"};
+
+            return Sprites_RUN;
+        }
+
+        public List<string> Sprites_WALK()
+        {
+            List<string> Sprites_WALK = new List<string>() {
+            @"Animation\Knight\WALK\WALK_000.png",
+            @"Animation\Knight\WALK\WALK_001.png",
+            @"Animation\Knight\WALK\WALK_002.png",
+            @"Animation\Knight\WALK\WALK_003.png",
+            @"Animation\Knight\WALK\WALK_004.png",
+            @"Animation\Knight\WALK\WALK_005.png",
+            @"Animation\Knight\WALK\WALK_006.png",
+            @"Animation\Knight\WALK\WALK_007.png",
+            @"Animation\Knight\WALK\WALK_008.png",
+            @"Animation\Knight\WALK\WALK_009.png"};
+
+            return Sprites_WALK;
+        }
+
+        public List<string> Sprites_SPELL_Part_1()
+        {         
+            return Sprites_ATTACK();
+        }
+
+        public List<string> Sprites_SPELL_Part_2()
+        {
+            List<string> Sprites_SPELL = new List<string>() {
+            @"Animation\Knight\SPELL\SPELL_000.png",
+            @"Animation\Knight\SPELL\SPELL_001.png",
+            @"Animation\Knight\SPELL\SPELL_002.png",};
+
+            return Sprites_SPELL;
+        }
+
+        public void ManaPrice(int manaPrice)
+        {
+            Mana -= manaPrice;
         }
     }
 }

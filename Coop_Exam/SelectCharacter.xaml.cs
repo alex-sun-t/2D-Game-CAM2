@@ -24,12 +24,16 @@ namespace Coop_Exam
     {
         ICharacter character;
 
+        Animation kt;
+        Animation ar;
+        Animation me;
+
         SolidColorBrush white;
         SolidColorBrush black;
 
         Frame frame;
 
-        int ml_sec = 100;
+        int ml_sec = 150;
 
         Knight knight;
         Archer archer;
@@ -44,12 +48,16 @@ namespace Coop_Exam
             mage = new Mage();
 
             frame = fram;
-            Task k = Task.Run(() => Animation_Knight_IDLE());
-            Task a = Task.Run(() => Animation_Archer_IDLE());
-            Task m = Task.Run(() => Animation_Mage_IDLE());
 
             white = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             black = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+
+            Animation kt = new Animation(imgWar,knight.Sprites_IDLE());
+            kt.start();
+            Animation ar = new Animation(imgArch, archer.Sprites_IDLE());
+            ar.start();
+            Animation me = new Animation(imgMage,mage.Sprites_IDLE());
+            me.start();
         }
 
         private void b1_MouseDown(object sender, MouseButtonEventArgs e)
@@ -87,41 +95,6 @@ namespace Coop_Exam
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             frame.Content = new Menu(frame);
-        }
-        void Animation_Knight_IDLE()
-        {
-            while (true)
-            {
-                foreach (var item in knight.Animation_IDLE())
-                {
-                    Dispatcher.BeginInvoke(new ThreadStart(delegate { imgWar.Source = new BitmapImage(new Uri(item, UriKind.RelativeOrAbsolute)); }));
-                    Thread.Sleep(ml_sec);
-                }
-            }
-        }
-
-        void Animation_Archer_IDLE()
-        {
-            while (true)
-            {
-                foreach (var item in archer.Animation_IDLE())
-                {
-                    Dispatcher.BeginInvoke(new ThreadStart(delegate { imgArch.Source = new BitmapImage(new Uri(item, UriKind.RelativeOrAbsolute)); }));
-                    Thread.Sleep(ml_sec);
-                }
-            }
-        }
-
-        void Animation_Mage_IDLE()
-        {
-            while (true)
-            {
-                foreach (var item in mage.Animation_IDLE())
-                {
-                    Dispatcher.BeginInvoke(new ThreadStart(delegate { imgMage.Source = new BitmapImage(new Uri(item, UriKind.RelativeOrAbsolute)); }));
-                    Thread.Sleep(ml_sec);
-                }
-            }
         }
     }
 }
